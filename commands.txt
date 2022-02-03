@@ -12,3 +12,4 @@ python ./mysite/manage.py runserver 0:8000
 
 docker ps -admin
 python manage.py migrate
+python manage.py createsuperuser 
