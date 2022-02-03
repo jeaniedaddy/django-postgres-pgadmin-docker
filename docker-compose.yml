@@ -1,0 +1,27 @@
+version: '3.1'
+
+services:
+  db:
+    container_name: postgresql_db
+    image: postgres
+    # automatically restarts the container - Docker daemon on restart or
+    # the continer itself is manually restarted
+    restart: always
+
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: test_db
+    ports:
+      - "5432:5432"
+  pdadmin:
+    container_name: pdaadmin4
+    image: dpage/pgadmin4
+    restart: always
+
+    environment:
+      PGADMIN_DEFAULT_EMAIL: root@root.com 
+      PGADMIN_DEFAULT_PASSWORD: root
+      #PGADMIN_LISTEN_PORT = 80
+    ports:
+      - "5050:80"
