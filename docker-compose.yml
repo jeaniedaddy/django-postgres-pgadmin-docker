@@ -2,9 +2,9 @@ version: '3.1'
 
 services:
   app: 
-    build: ./django
+    build: ./django/mysite
     volumes:
-      - ./django:/django
+      - ./django/mysite:/django/mysite
     ports:
       - 8000:8000
     image: app:django

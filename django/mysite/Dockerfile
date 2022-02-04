@@ -2,9 +2,9 @@
 FROM python
 
 ENV PYTHONUNBUFFERED=1
-WORKDIR /django
+WORKDIR /django/mysite
 
-COPY requirements.txt .
+COPY ./requirements.txt .
 RUN pip install -r requirements.txt
 
 #COPY . . 
